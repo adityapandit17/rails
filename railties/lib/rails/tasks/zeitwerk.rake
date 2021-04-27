@@ -58,7 +58,7 @@ namespace :zeitwerk do
       # Quick regression fix for 6.0.3 to support namespaces that do not have
       # eager load paths, like the recently added i18n. I'll rewrite this task.
       eln.try(:config).try(:eager_load_paths)
-    end.flatten
+    end
 
     not_checked = ActiveSupport::Dependencies.autoload_paths - eager_load_paths
     not_checked.select! { |dir| Dir.exist?(dir) }
